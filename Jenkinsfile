@@ -23,7 +23,7 @@ stage('Test') {
 
 stage('Archive') {
               steps{
-              archiveArtifacts arifacts: '**/*.war, **/*.jar'
+              echo '..'
     }
 }
 
