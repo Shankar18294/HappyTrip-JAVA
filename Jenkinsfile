@@ -15,19 +15,13 @@ pipeline {
                                   
              stage('Build') {
               step{
-    // some block
-    }
-}
-
-stage('Build') {
-              step{
-    // some block
+     echo 'building..'
     }
 }
 
 stage('Test') {
               step{
-         echo 'building..
+         echo 'testing..'
     }
 }
 
