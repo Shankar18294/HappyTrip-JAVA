@@ -1,46 +1,50 @@
 pipeline {
-     agent any {
+     agent any
+     
+     tools {
+          jdk "Java-11"
+          maven "maven 3.6.3"
+     }
           stages {
           
                 stage('checkout') {
-                step{
+                steps{
              checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '216e5c2e-1262-4284-b659-457d9f80b415', url: 'https://github.com/Shankar18294/HappyTrip-JAVA.git']]])
                      }
                                   }
                                   
              stage('Build') {
-              step{
+              steps{
      echo 'building..'
     }
 }
 
 stage('Test') {
-              step{
+              steps{
          echo 'testing..'
     }
 }
 
 stage('Archive') {
-              step{
+              steps{
               archiveArtifacts arifacts: '**/*.war, **/*.jar'
     }
 }
 
 stage('Deploy') {
-              step{
+              steps{
         echo 'deploying..'
     }
 }
 
 stage('SonarQude analysis') {
-              step{
+              steps{
         echo '..'
     }
 }
 
     }
   }
-}
 
 
                                   
