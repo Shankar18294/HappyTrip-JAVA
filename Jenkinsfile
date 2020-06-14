@@ -49,6 +49,10 @@ stage('SonarQude analysis') {
     }
 }
 
+    }
+  }
+}
+
 
                                   
                     
