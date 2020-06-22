@@ -9,19 +9,15 @@ pipeline {
                      }
                                   }
                                   
-             stage('compile') {
-                   tools {
-        jdk 'jdk11'
-        maven 'maven 3.6.3'
-        }
+             stage('Build') {
               steps{
-     powershell 'mvn -f happytrip-code/pom.xml compile'
+     echo 'building..'
     }
 }
 
-stage('package') {
+stage('Test') {
               steps{
-         powershell 'mvn -f happytrip-code/pom.xml package'
+         echo 'testing..'
     }
 }
 
